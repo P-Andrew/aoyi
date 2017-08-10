@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	 <meta name="author" content="starm, starmbest@qq.com"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<title>农场地址</title>
+	<!-- 引入YDUI样式 -->
+	<link rel="stylesheet" href="../Public/css/ydui.css" />
+	<!-- 引入YDUI自适应解决方案类库 -->
+	<script src="../Public/js/ydui.flexible.js"></script>
+	<!-- 引入starm样式 -->
+	<link rel="stylesheet" href="../Public/css/starm.css" />
+	<link rel="stylesheet" type="text/css" href="../Public/css/swiper.min.css">
+
+</head>
+<body>
+<section class="g-flexview">
+	<header class="m-navbar">
+		<a href="{{route('user')}}" class="navbar-item navbar-color">
+			<i class="back-ico"></i>返回
+		</a>
+		<div class="navbar-center ">
+			<span class="navbar-title navbar-color">农场地址</span>
+		</div>
+	</header>
+	<div class="g-scrollview">
+		<div class="address_list">
+			<label class="cell-item">
+			      <span class="cell-left"><i class="icon-location"></i></span>
+			      <div class="addres">
+			      	<p>宇元农场</span></p>
+			      	<p>地址：上海市静安区江场西路111弄1号楼101室</p>
+			      </div>
+
+			</label>
+		</div>
+
+	</div>
+</section>
+<!-- 引入jQuery 2.0+ -->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../Public/js/ydui.js"></script>
+<script type="text/javascript">
+!function () {
+	$('.share').on('click', function () {
+       $('.share_box').show();
+    });
+    $('.share_box').on('click', function () {
+       $('.share_box').hide();
+    });
+}();
+</script>
+</body>
+</html>

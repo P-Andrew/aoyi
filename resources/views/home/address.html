@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	 <meta name="author" content="starm, starmbest@qq.com"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<title>个人中心</title>
+	<!-- 引入YDUI样式 -->
+	<link rel="stylesheet" href="../Public/css/ydui.css" />
+	<!-- 引入YDUI自适应解决方案类库 -->
+	<script src="../Public/js/ydui.flexible.js"></script>
+	<!-- 引入starm样式 -->
+	<link rel="stylesheet" href="../Public/css/starm.css" />
+	<link rel="stylesheet" type="text/css" href="../Public/css/swiper.min.css">
+
+</head>
+<body>
+<section class="g-flexview">
+	<header class="m-navbar navbar-bg">
+		<a href="javascript:history.back();" class="navbar-item navbar-color">
+			<i class="cells-icon back-ico"></i>返回
+		</a>
+		<div class="navbar-center ">
+			<span class="navbar-title navbar-color">选择地址</span>
+		</div>
+	</header>
+	<div class="g-scrollview" style="background: #f0ffdb">
+		<div class="address_list">
+			<label class="cell-item">
+			      <span class="cell-left"><i class="icon-location"></i></span>
+			      <div class="addres">
+			      	<p>收货人：菜<span>18500001704</span></p>
+			      	<p>地址：上海市静安区江场西路111弄1号楼101室</p>
+			      </div>
+			      <label class="cell-right">
+			          <input type="radio" name="radio" checked/>
+			          <i class="cell-checkbox-icon"></i>
+			      </label>
+			</label>
+			<label class="cell-item">
+			      <span class="cell-left"><i class="icon-location"></i></span>
+			      <div class="addres">
+			      	<p>收货人：菜<span>18500001704</span></p>
+			      	<p>地址：上海市静安区江场西路111弄1号楼101室</p>
+			      </div>
+			      <label class="cell-right">
+			          <input type="radio" name="radio"/>
+			          <i class="cell-checkbox-icon"></i>
+			      </label>
+			</label>
+		</div>
+		<div class="m-cell address_input">
+			<i></i>
+			    <div class="cell-item">
+			        <div class="cell-left">选择收菜地址</div>
+			        <div class="cell-right cell-arrow"></div>
+			    </div>
+			<i></i>
+		</div>
+		<div class="address_main">
+			<p>选个地址让我回到你怀抱吧！</p>
+			<img src="../Public/images/address_img.png">
+		</div>
+		<div id="note" class="note" style="display:none;">
+		<div class="st_add_tishi">
+			<img src="../Public/images/address_tishi.png">
+			<span>温馨提示：为了保证蔬菜的新鲜，农场今日下午5:00前统一安排收菜并寄出，预计明日下午5点亲啊送达。</span>
+			<a onclick="closeclick()">X</a>
+		</div>
+
+			</div>
+		</div>
+	</div>
+	<footer class="m-tabbar padd0" >
+	<div class="m-grids-2 st-grids" style="width: 100%">
+	    <a href="#" class="grids-item">
+	        <div class="grids-txt"><span>取消</span></div>
+	    </a>
+	    <a href="#" class="grids-item" style="background: #22a837;color:#fff">
+	        <div class="grids-txt col_fff"><span>派送</span></div>
+	    </a>
+	</div>
+    </footer>
+</section>
+<!-- 引入jQuery 2.0+ -->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- 引入YDUI脚本 -->
+<script  src="../Public/js/swiper.min.js"></script>
+<script src="../Public/js/ydui.js"></script>
+<script type="text/javascript">
+	function cookiesave(n, v, mins, dn, path)
+	{
+	    if(n)
+	    {
+
+	     if(!mins) mins = 365 * 24 * 60;
+	  if(!path) path = "/";
+	     var date = new Date();
+
+	     date.setTime(date.getTime() + (mins * 60 * 1000));
+
+	     var expires = "; expires=" + date.toGMTString();
+
+	     if(dn) dn = "domain=" + dn + "; ";
+	     document.cookie = n + "=" + v + expires + "; " + dn + "path=" + path;
+	    }
+	}
+	function cookieget(n)
+	{
+	    var name = n + "=";
+	 var ca = document.cookie.split(';');
+	 for(var i=0;i<ca.length;i++) {
+	  var c = ca[i];
+	  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	  if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	 }
+	 return "";
+	}
+	function closeclick(){
+	 document.getElementById('note').style.display='none';
+	 cookiesave('closeclick','closeclick','','','');
+	}
+	function clickclose(){
+	 if(cookieget('closeclick')=='closeclick'){
+	  document.getElementById('note').style.display='none';
+	 }else{
+	  document.getElementById('note').style.display='block';
+	 }
+	}
+	window.onload=clickclose;
+</script>
+</body>
+</html>
